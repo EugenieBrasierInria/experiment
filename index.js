@@ -559,6 +559,8 @@ function change_difference(n_difference){
         generate_trials(5, 2);
         id_trial = 0;
         end = false;
+        reactionTimes.length = 0;
+        nb_errors = 0;
 
         // État initial
         showStartMessage();
