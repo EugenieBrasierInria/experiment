@@ -138,7 +138,6 @@ const squareNbs = [...new Set(reactionTimes.map(t => t.square_nb))].sort((a, b) 
 const squareSizes = [...new Set(reactionTimes.map(t => t.square_size))].sort((a, b) => a - b);
 
 let html = `
-    <h3>Résultats</h3>
     <table border="1" style="border-collapse: collapse; text-align: center;">
         <thead>
             <tr>
@@ -370,10 +369,7 @@ function drawSquares() {
     });
 }
 
-
-// Gestion de la touche ESPACE
-document.addEventListener("keydown", function(event) {
-
+function action(event){
     // On ne réagit qu'à la barre espace
     if (event.code !== "Space" || end == true) {
         return;
@@ -462,6 +458,15 @@ document.addEventListener("keydown", function(event) {
         }
         
     }
+}
+
+// Gestion de la touche ESPACE
+document.addEventListener("keydown", function(event) {
+    action(event);
+});
+
+document.addEventListener("touchstart", function(event) {
+    action(event);
 });
 
 
