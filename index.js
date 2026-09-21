@@ -181,8 +181,6 @@ squareNbs.forEach(nb => {
             html += `
                 <td>
                     ${mean.toFixed(2)} ms
-                    <br>
-                    <small>Var : ${variance.toFixed(2)}</small>
                 </td>
             `;
 
@@ -198,6 +196,9 @@ html += `
         </tbody>
     </table>
 `;
+
+html += `<br>
+NB Errors : ` + nb_errors;
 
 results_area.innerHTML = html;
 }
@@ -490,6 +491,7 @@ function shuffle(array) {
 }
 
 function generate_trials(nb_standard, nb_traps){
+    trials.length = 0;
     // Generating trials
     for (const square_nb of Object.values(SQUARE_NB)) {
         for (const square_size of Object.values(SQUARE_SIZE)) {
