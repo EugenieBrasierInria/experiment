@@ -585,7 +585,7 @@ window.addEventListener('load', () => {
     setup_buttons();
 
     // Generating trials
-    generate_trials(2, 0);
+    generate_trials(3, 2);
 
     // État initial
     showStartMessage();
