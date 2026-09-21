@@ -369,7 +369,10 @@ function drawSquares() {
     });
 }
 
-function action(event){
+
+// Gestion de la touche ESPACE
+document.addEventListener("keydown", function(event) {
+
     // On ne réagit qu'à la barre espace
     if (event.code !== "Space" || end == true) {
         return;
@@ -458,15 +461,6 @@ function action(event){
         }
         
     }
-}
-
-// Gestion de la touche ESPACE
-document.addEventListener("keydown", function(event) {
-    action(event);
-});
-
-document.addEventListener("touchstart", function(event) {
-    action(event);
 });
 
 
